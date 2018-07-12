@@ -1,0 +1,15 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+
+
+
+
+
+
+def index(request):
+    print('web进入')
+
+    return HttpResponse('ssss')
