@@ -56,8 +56,24 @@ def rePhone(phone):
     return boolean_phone
 
 
+# 筛选网站的手机号
+# 返回未去重复的集合数据
+# html_url传入html源码
+def refindurlallphone(html_url):
+    r = r'1[3|4|5|7|8][0|1|2|3|4|5|6|7|8|9]\d{8}'
+    data = re.findall(r, html_url, re.M | re.S | re.I)
+    return data
+
+
 if __name__ == '__main__':
     print('正则开始测试')
     # rePhone('15609075281')
     # reApk('html.url')
     # reUrl('htstp://www.baidu.ssss')
+    refindurlallphone('''<div>
+    <p>18902030605</p>
+    <p>18902030605</p>
+    <p>18902043435</p>
+    <p>18905404565</p>
+    <p>18902030605</p>
+</div>''')
